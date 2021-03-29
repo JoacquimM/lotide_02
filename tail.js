@@ -7,18 +7,32 @@ const assertEqual = function(actual, expected) {
 };
 
 //TAIL function : Returns the "tail" of an array: everything except for the first item (head) of the provided array.
+// const tail = (arr) => {
+//   let tailArray = [];
+//   for(let i = 1; i < arr.length; i++) {
+//    tailArray.push(arr[i])
+//   }
+
+//   console.log(tailArray);
+//   return tailArray;
+// }
+
+
+// Top  tail function function refectored
 const tail = (arr) => {
   let tailArray = [];
-  for(let i = 1; i < arr.length; i++) {
+  for (let i in arr) {
    tailArray.push(arr[i])
   }
 
+  tailArray.splice(0,1)
   console.log(tailArray);
   return tailArray;
 }
 
 const words = ["Yo Yo", "Lighthouse", "Labs"]
 
+//------- TETS ----------------
 //test case 1: showcases that assertEqual can not  compare array values. 
 const result = tail(["Hello", "Lighthouse", "Labs"]);
 assertEqual(result, ["Lighthouse", "Labs"]); // => will always fail!
